@@ -1,0 +1,153 @@
+
+<html>
+<head>
+</head>
+<meta charset="utf-8"/>
+		<title>Protein Membrane</title>
+
+		<!-- Google web fonts -->
+		<link href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700" rel='stylesheet' />
+
+		<!-- The main CSS file -->
+		<link href="assets/css/style.css" rel="stylesheet" />
+<body>
+<style>
+#header{
+	width: 600px;
+	float: right;
+	background: #00ff00 url("1.jpg") no-repeat fixed center;
+}
+</style>
+<header>
+<h3 style=' font-size: 48; font-weight: lighter; font-style: inherit; text-transform: inherit; color: #008000; text-align: center;' >Protein Membrane</h3>
+</header>
+
+
+
+<!--<font face="arial" size="16">
+<table width="100" align="center" border="1" cellpadding="2">
+<tr>
+<div id="str">
+</tr>
+</table>
+
+<table width="100" align="right" border="1" cellpadding="2">
+<tr>
+	<td>Here you<br> can upload <br>your files<br>
+	<span align="right" style="cursor:pointer;" id="adduploadinput" onclick="javascript:addInput('theadder')"><img src="pic.jpg" width="30" height="30"></span>
+	</td>
+	
+</table> -->
+<br><br><br><br>
+<center>
+<img src="image.png" style="width:1500px;height:228px;" >
+</center>
+<script>
+function checkTextField(field) {
+    if (field.value == '') {
+        alert("Field is empty");
+		field.value="auto";
+    }
+}
+</script>
+<br><br>
+<a href="visual.html">Visual Mode</a>
+&nbsp;
+<a href="helpfile.docx">Help</a>
+<form name='form1' method="get" action="app.php">
+<table border="1" cellpadding="2">
+<tr>
+	<td>&nbsp;&nbsp; Radius [range: 50-300]</td>
+	<td><input onblur="checkTextField(this);" type="text" name="radius" size="10" maxlength="10" value="auto/[50-300]" style="color: #808080"></td>
+</tr>
+<!--<tr>
+	<td>Padding</td>
+	<td><input type="text" name="padding" size="10" maxlength="10" value="auto[" style="color: #808080"></td>
+</tr>-->
+<tr>
+	<td>&nbsp;&nbsp;Membrane<br>&nbsp;&nbsp;thickness [range: 20-40]</td>
+	<td><input onblur="checkTextField(this);" type="text" name="thickness" size="10" maxlength="10" value="auto/[20-40]" style="color: #808080"></td>
+</tr>
+<tr>
+	<td>&nbsp;&nbsp;Angle [range: 90-360]</td>
+	<td><input onblur="checkTextField(this);" type="text" name="angle" size="10" maxlength="10" value="auto/[90-360]" style="color: #808080"><br>*For sphere: 90=quarter, 180=half, 360=full</td>
+</tr>
+<tr>
+	<td>&nbsp;&nbsp;Email address</td>
+	<td><input onblur="checkTextField(this);" type="text" name="email" size="20" maxlength="40" value="example@gmail.com" style="color: #808080"></td>
+</tr>
+<tr>
+  <td>&nbsp;&nbsp;Membrane <br>&nbsp;&nbsp;geometry</td>
+  <td><input onblur="checkTextField(this);" type="radio" name="type" value="circular" checked> Circular <br>
+  <input type="radio" name="type" value="sphere"> Sphere </td>
+</tr>
+<tr>
+  <td>&nbsp;&nbsp;Membrane <br>&nbsp;&nbsp; content</td>	
+  <td><input type="radio" name="type1" value="dummy" checked> Dummy<br>
+  <input type="radio" name="type1" value="real"> Real </td>
+ 
+</tr>
+
+<tr>
+	<td>&nbsp;&nbsp;Protein IDs:</td>
+	<td><textarea onblur="checkTextField(this);" name="Id" rows="1" cols="60" maxlength="1000">2a79</textarea><br>Example:2a79, 3lbw, 2rh1, 1prc, 2evu</td>
+</tr>
+<tr>
+	<td>&nbsp;&nbsp;Membrane content:<br></td>
+	<td>
+	<textarea name="lipzide" rows="1" cols="60" maxlength="1000">DPPC 1</textarea><br>
+	Example: CHOLESTEROL 0.1 DPPC 0.7 POPC 0.2<br>
+	For list of lipids see <a href="lipzide.html">link</a></td>
+</tr>
+</table>
+<input type="hidden" name="area" rows="12" cols="80" maxlength="1000" >
+<br>
+<input onclick='input()' type="submit" name="submit" value="Go"> 
+		</form>
+
+		<script>
+		function myfunc()
+		{
+			alert($("ul").text());
+			$("fadi") = $("ul").text()
+		}
+		</script>
+		<form id="upload" method="post" action="upload.php" enctype="multipart/form-data">
+			<div id="drop" class="auto-style46">
+				Drop Here
+
+				<a>Browse</a>
+				<input type="file" name="upl" multiple />
+				
+			</div>
+			
+			<ul></ul>
+			 <!--<input onclick='input()' type='button' value='FINISH' id='button'><br>-->
+		</form> 
+		<script>
+function input(){
+    var text = $("ul").text();
+    document.forms.form1.area.value = text.concat(" ");
+}    
+</script>
+
+
+		<!-- JavaScript Includes -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="assets/js/jquery.knob.js"></script>
+
+		<!-- jQuery File Upload Dependencies -->
+		<script src="assets/js/jquery.ui.widget.js"></script>
+		<script src="assets/js/jquery.iframe-transport.js"></script>
+		<script src="assets/js/jquery.fileupload.js"></script>
+		
+		<!-- Our main JS file -->
+		<script src="assets/js/script.js"></script>
+
+<!--<center>
+<iframe style="background: #FFFFFF;" src="lipzide.html" width="1000" height="1000"></iframe>
+</center>-->
+
+</font>
+</body>
+</html>

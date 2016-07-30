@@ -1,0 +1,355 @@
+﻿<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+
+    		<!-- JavaScript Includes -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="assets/js/jquery.knob.js"></script>
+
+		<!-- jQuery File Upload Dependencies -->
+		<script src="assets/js/jquery.ui.widget.js"></script>
+		<script src="assets/js/jquery.iframe-transport.js"></script>
+		<script src="assets/js/jquery.fileupload.js"></script>
+		
+		<!-- Our main JS file -->
+		<script src="assets/js/script.js"></script>
+
+    <!-- Google web fonts -->
+		<link href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700" rel='stylesheet' />
+
+		<!-- The main CSS file -->
+		<link href="assets/css/style.css" rel="stylesheet" />
+
+    <!-- Google web fonts -->
+		<link href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700" rel='stylesheet' />
+
+		<!-- The main CSS file -->
+		<link href="assets/css/style.css" rel="stylesheet" />
+		<style>
+		#header{
+			width: 600px;
+			float: right;
+			background: #00ff00 url("1.jpg") no-repeat fixed center;
+			}
+</style>
+	<header>
+<h3 style=' font-size: 72; font-weight: lighter; font-style: inherit; text-transform: inherit; color: #008000; text-align: center;' >Protein Membrane</h3>
+</header>
+  <meta charset="utf-8">
+  <title>Visual Mode</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="Scripts/jquery-1.10.2.js"></script>
+  <script src="Scripts/jquery-ui.js">
+
+
+  </script>  
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <style>
+  #draggable { width: 1px; height: 1px;  background:transparent; } 
+  #draggable2 { width: 1px; height: 1px;  background:transparent; }
+
+  #draggable5 { width: 1px; height: 1px;  background:transparent; } 
+  #sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+  #sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; } //background: none; border: none; background-image:none background-repeat: no-repeat;
+  #sortable li span { position: absolute; margin-left: -1.3em; }
+  </style>
+  <script>
+  $(function() {
+      $("#draggable").draggable();
+      $("#draggable2").draggable();
+      $("#sortable").sortable();
+      $("#sortable").disableSelection();
+  });
+
+
+  </script>
+</head>
+
+ 
+  
+      
+<!--<form action="demo_form.asp">-->
+    <br />
+	<br><br><br><br>
+<center>
+<img src="image.png" style="width:1500px;height:228px;" >
+</center>
+<script>
+function checkTextField(field) {
+    if (field.value == '') {
+        alert("Field is empty");
+		field.value="auto";
+    }
+}
+</script>	
+<a href="index.html">Regular Mode</a>
+<form name='form1' method="get" action="app.php">
+<table border="1" cellpadding="2">
+<tr>
+	<td>&nbsp;&nbsp; Radius [range: 50-300]</td>
+	<td><input onblur="checkTextField(this);" id="radius" type="text" name="radius" size="10" maxlength="10" value="auto/[50-300]" style="color: #808080"></td>
+</tr>
+<!--<tr>
+	<td>Padding</td>
+	<td><input type="text" name="padding" size="10" maxlength="10" value="auto[" style="color: #808080"></td>
+</tr>-->
+<tr>
+	<td>&nbsp;&nbsp;Membrane<br>&nbsp;&nbsp;thickness [range: 20-40]</td>
+	<td><input onblur="checkTextField(this);" type="text" id="thickness" name="thickness" size="10" maxlength="10" value="auto/[20-40]" style="color: #808080"></td>
+</tr>
+<tr>
+	<td>&nbsp;&nbsp;Angle [range: 90-360]</td>
+	<td><input onblur="checkTextField(this);" type="text" id="angle" name="angle" size="10" maxlength="10" value="auto/[90-360]" style="color: #808080"><br>*For sphere: 90=quarter, 180=half, 360=full</td>
+</tr>
+<tr>
+	<td>&nbsp;&nbsp;Email address</td>
+	<td><input onblur="checkTextField(this);" type="text" name="email" size="20" maxlength="40" value="example@gmail.com" style="color: #808080"></td>
+</tr>
+<tr>
+  <td>&nbsp;&nbsp;Membrane <br>&nbsp;&nbsp;geometry</td>
+  <td><input onblur="checkTextField(this);" type="radio" name="type" value="circular" checked="true"> Circular <br>
+  <input type="radio" name="type" value="sphere"> Sphere </td>
+</tr>
+<tr>
+  <td>&nbsp;&nbsp;Membrane <br>&nbsp;&nbsp; content</td>	
+  <td><input type="radio" name="type1" value="dummy" checked="true"> Dummy<br>
+  <input type="radio" name="type1" value="real"> Real </td>
+ 
+</tr>
+
+<tr>
+	<td>&nbsp;&nbsp;Protein IDs:</td>
+	<td><textarea onblur="checkTextField(this);" id="proID" name="Id" rows="1" cols="60" maxlength="1000">2a79</textarea><br>Example:2a79, 3lbw, 2rh1, 1prc, 2evu</td>
+</tr>
+<tr>
+	<td>&nbsp;&nbsp;Membrane content:<br></td>
+	<td>
+	<textarea name="lipzide" rows="1" cols="60" maxlength="1000">DPPC 1</textarea><br>
+	Example: CHOLESTEROL 0.1 DPPC 0.7 POPC 0.2<br>
+	For list of lipids see <a href="lipzide.html">link</a></td>
+</tr>
+</table>
+<input type="hidden"  name="area" rows="12" cols="80" maxlength="1000" >
+<input onclick='input()' type="submit" name="submit" value="Go"> 
+</form>
+    <br />
+	<ul></ul>
+<script>
+function input(){
+    var text = $("ul").text();
+    document.forms.form1.area.value = text.concat(" ");
+}    
+</script>
+
+
+    
+<button type="button"
+onclick="DrawMembrane()">
+Draw Membrane.</button>
+
+
+    <button type="button" id="clear"
+onclick="Clearing()">
+Clearing.</button>
+<input id="Button1" onclick="myFunction2()" type="button" value="generate protein icons" /><br />
+</form>
+
+<form action="demo_form.asp">
+<p id="demo2"></p>
+ <head>
+         <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+                 
+#drop{
+    background-color: #2E3134;
+    padding: 40px 50px;
+    margin-bottom: 30px;
+    border: 20px solid rgba(0, 0, 0, 0);
+    border-radius: 3px;
+    border-image: url('../img/border-image.png') 25 repeat;
+    text-align: center;
+    text-transform: uppercase;
+
+    font-size:16px;
+    font-weight:bold;
+    color:#7f858a;
+}
+
+
+*{
+    margin:0;
+    padding:0;
+}
+
+
+#drop a{
+    background-color:#007a96;
+    padding:12px 26px;
+    color:#fff;
+    font-size:14px;
+    border-radius:2px;
+    cursor:pointer;
+    display:inline-block;
+    margin-top:12px;
+    line-height:1;
+}
+
+a, a:visited {
+    outline:none;
+    color:#389dc1;
+}
+
+#upload ul{
+    list-style:none;
+    margin:0 -30px;
+    border-top:1px solid #2b2e31;
+    border-bottom:1px solid #3d4043;
+}
+
+             </style>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="1000" height="600"></canvas>
+    <script>
+        var canvas = document.getElementById('myCanvas');
+        var context = canvas.getContext('2d');
+        var centerX = canvas.width / 2;
+        var centerY = canvas.height / 2;
+        var radius;
+        document.getElementById('clear').addEventListener('click', function () {
+            context.clearRect(0, 0, canvas.width, canvas.height);
+        }, false);
+
+        function Clearing() {
+            context.clear();
+        }
+        function DrawMembrane() {
+           
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            radius = document.getElementById('radius').value;
+            angle = document.getElementById('angle').value;
+            context.beginPath();
+            context.arc(centerX, centerY, radius, 0, (angle / 180) * Math.PI, false);
+            context.fillStyle = 'transparent';
+            context.fill();
+            context.lineWidth = 5;
+            context.strokeStyle = 'red';
+            context.stroke();
+
+            radius = document.getElementById('radius').value - document.getElementById('thickness').value;;
+            context.beginPath();
+            context.arc(centerX, centerY, radius, 0, (angle / 180) * Math.PI, false);
+            context.fillStyle = 'transparent';
+            context.fill();
+            context.lineWidth = 5;
+            context.strokeStyle = 'blue';
+            context.stroke();
+        }
+    </script>
+  </body>
+
+
+
+</form>
+
+		<script>
+function input(){
+    var text = $("ul").text();
+    document.forms.form1.area.value = text.concat(" ");
+}    
+</script>
+    <button onclick="myFunction1()">Go</button>
+
+    <br />
+    <br />
+    <br />
+
+   
+    
+<script>
+
+   
+    var i = 0;
+    function myFunction1() {
+        $("#draggable5" + i).draggable();
+        i++;
+        
+        var div = document.createElement("div"+i);
+        div.id = "draggable5"+i;
+        div.class = "ui-widget-content";
+        
+        document.body.appendChild(div);
+
+      /* var x = document.createElement("IMG"+i);
+    x.setAttribute("src", "items/blue_1_1.png");
+    x.setAttribute("width", "80");
+    x.setAttribute("width", "80");
+    x.setAttribute("alt", "The Pulpit Rock");
+    */
+        document.getElementById("draggable5" + i).innerHTML = "<img src='items/blue_1_1.png'  name='myimage1' alt='Smiley face' height='80' width='80';> <h2>erde"+i+"</h2>";
+    //div.appendChild(img);
+    
+    
+    $("#draggable5" + i).draggable();
+    
+   // document.body.appendChild(div);
+    }
+    function ShowResults(value, index, ar) {
+       // document.write("value: " + value);
+        $("#draggable5" + i).draggable();
+        i++;
+
+        var div = document.createElement("div" + i);
+        div.id = "draggable5" + i;
+        div.class = "ui-widget-content";
+
+        document.body.appendChild(div);
+
+        /* var x = document.createElement("IMG"+i);
+      x.setAttribute("src", "items/blue_1_1.png");
+      x.setAttribute("width", "80");
+      x.setAttribute("width", "80");
+      x.setAttribute("alt", "The Pulpit Rock");
+      */
+        document.getElementById("draggable5" + i).innerHTML = "<img src='items/blue_1_1.png'  name='myimage1' alt='Smiley face' height='80' width='80';> <h2>" + value + "</h2>";
+        //div.appendChild(img);
+
+
+        $("#draggable5" + i).draggable();
+    }
+    function myFunction2() {
+        var str=document.getElementById("proID").value;
+        var arr=str.split(" "); 
+        arr.forEach(ShowResults)
+      
+
+        // document.body.appendChild(div);
+    }
+</script>
+
+
+    
+
+<div id="draggable" class="ui-widget-content"  >
+
+   
+   
+
+<p>&nbsp;</p>
+    
+
+
+
+    
+</div>
+ 
+    
+ 
+</body>
+</html>
